@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5f9;
+    color: #4a2635;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    width: 100%;
+    padding: 20px 8%;
+    background-color: #b13b72;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.encabezado nav {
+    display: flex;
+    gap: 15px;
+}
+
+.encabezado nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.encabezado nav a:hover {
+    background-color: #d95b98;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 500px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f7,
+        #f8c5dc
+    );
+}
+
+.hero-texto {
+    max-width: 650px;
+}
+
+.hero-texto h1 {
+    color: #74294d;
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.hero-texto h2 {
+    color: #b13b72;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero-texto p {
+    color: #654852;
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+/* BOTÓN */
+
+.boton {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #b13b72;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.boton:hover {
+    background-color: #74294d;
+}
+
+/* BIENVENIDA */
+
+.bienvenida {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.bienvenida h2 {
+    color: #74294d;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.bienvenida > p {
+    color: #745f69;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* TARJETAS */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta {
+    background-color: white;
+    padding: 35px 25px;
+    border-radius: 18px;
+    border: 1px solid #ead1dc;
+    box-shadow: 0 10px 25px rgba(116, 41, 77, 0.12);
+}
+
+.tarjeta h3 {
+    color: #b13b72;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    color: #745f69;
+}
+
+/* PRODUCTOS */
+
+.seccion {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 25px;
+}
+
+.seccion h1 {
+    text-align: center;
+    color: #74294d;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.seccion > p {
+    text-align: center;
+    color: #745f69;
+    margin-bottom: 40px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.producto {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(116, 41, 77, 0.12);
+}
+
+.producto-imagen {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff1f7;
+    border-radius: 15px;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.producto h2 {
+    color: #74294d;
+}
+
+.producto p {
+    color: #745f69;
+    margin: 10px 0;
+}
+
+.producto strong {
+    display: block;
+    color: #b13b72;
+    font-size: 22px;
+    margin: 10px;
+}
+
+.producto button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: #b13b72;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CONTACTO */
+
+.contacto {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.informacion,
+.contacto form {
+    background-color: white;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid #ead1dc;
+    box-shadow: 0 10px 25px rgba(116, 41, 77, 0.12);
+}
+
+.informacion h2,
+.informacion h3 {
+    color: #74294d;
+}
+
+.informacion p {
+    margin: 10px 0;
+}
+
+.informacion a {
+    color: #b13b72;
+    font-weight: bold;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto label {
+    color: #74294d;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 13px;
+    margin-top: 5px;
+    border: 1px solid #ead1dc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.contacto textarea {
+    min-height: 140px;
+}
+
+.contacto button {
+    margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background-color: #fff1f7;
+    color: #74294d;
+    border-top: 1px solid #ead1dc;
+}
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .tarjetas,
+    .productos,
+    .contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-texto h1 {
+        font-size: 42px;
+    }
+}

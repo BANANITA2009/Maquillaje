@@ -1,0 +1,714 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Maquillaje Beauty{% endblock %}</title>
+
+    <style>
+
+        /* =====================================
+           CONFIGURACIÓN GENERAL
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff9fc;
+            color: #492638;
+        }
+
+        /* =====================================
+           BARRA DE NAVEGACIÓN
+        ===================================== */
+
+        .encabezado {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 75px;
+            padding: 0 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            border-bottom: 1px solid #f3d8e4;
+
+            box-shadow:
+                0 5px 25px rgba(105, 35, 65, 0.08);
+        }
+
+        .logo {
+            color: #a52c65;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .encabezado nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .encabezado nav a {
+            position: relative;
+
+            color: #63384c;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .encabezado nav a:hover {
+            color: #c33d78;
+        }
+
+        .encabezado nav a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: #c33d78;
+
+            transition: 0.3s;
+        }
+
+        .encabezado nav a:hover::after {
+            width: 100%;
+        }
+
+        /* =====================================
+           PORTADA
+        ===================================== */
+
+        .hero {
+            min-height: 650px;
+
+            padding: 70px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    #f6bfd5 0%,
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 70% 90%,
+                    #fce0eb 0%,
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #fffafd,
+                    #ffe9f2
+                );
+        }
+
+        .hero::before {
+            content: "♡";
+
+            position: absolute;
+
+            right: 47%;
+            top: 12%;
+
+            font-size: 70px;
+
+            color: #d26a98;
+
+            opacity: 0.15;
+
+            transform: rotate(-15deg);
+        }
+
+        .hero::after {
+            content: "✦";
+
+            position: absolute;
+
+            right: 8%;
+            bottom: 10%;
+
+            font-size: 90px;
+
+            color: #b83c72;
+
+            opacity: 0.15;
+        }
+
+        .hero-texto {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mini-titulo {
+            margin-bottom: 18px;
+
+            color: #bd3974;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            color: #85244f;
+
+            font-size: 72px;
+
+            line-height: 0.98;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d34e87;
+        }
+
+        .hero h2 {
+            color: #6a344d;
+
+            font-size: 30px;
+
+            font-weight: normal;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-texto > p {
+            color: #795365;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+
+            max-width: 530px;
+        }
+
+        /* =====================================
+           BOTÓN
+        ===================================== */
+
+        .boton {
+            display: inline-block;
+
+            padding: 16px 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a92c65,
+                    #d6538b
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 35px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 10px 25px rgba(169, 44, 101, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 30px rgba(169, 44, 101, 0.35);
+        }
+
+        /* =====================================
+           CÍRCULO DECORATIVO
+        ===================================== */
+
+        .hero-decoracion {
+            width: 360px;
+            height: 360px;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f8cadc,
+                    #d9578c
+                );
+
+            box-shadow:
+                0 30px 70px rgba(148, 42, 87, 0.22);
+        }
+
+        .hero-decoracion::before {
+            content: "";
+
+            width: 290px;
+            height: 290px;
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border: 2px solid rgba(255,255,255,0.45);
+        }
+
+        .hero-decoracion {
+            font-size: 130px;
+        }
+
+        /* =====================================
+           BIENVENIDA
+        ===================================== */
+
+        .bienvenida {
+            padding: 90px 7%;
+
+            text-align: center;
+
+            background: white;
+        }
+
+        .bienvenida h2 {
+            color: #942653;
+
+            font-size: 40px;
+
+            margin-bottom: 18px;
+        }
+
+        .bienvenida > p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #775363;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+        /* =====================================
+           TARJETAS
+        ===================================== */
+
+        .tarjetas {
+            margin-top: 55px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .tarjeta {
+            width: 285px;
+
+            padding: 35px 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #fff4f8
+                );
+
+            border: 1px solid #f1d7e3;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 12px 35px rgba(111, 37, 67, 0.08);
+
+            transition: 0.35s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 20px 40px rgba(111, 37, 67, 0.15);
+        }
+
+        .tarjeta h3 {
+            color: #b52f6c;
+
+            font-size: 23px;
+
+            margin-bottom: 15px;
+        }
+
+        .tarjeta p {
+            color: #775363;
+
+            line-height: 1.7;
+        }
+
+        /* =====================================
+           PRODUCTOS
+        ===================================== */
+
+        .seccion {
+            padding: 90px 7%;
+
+            text-align: center;
+
+            background: #fff7fa;
+        }
+
+        .seccion h1 {
+            color: #942653;
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .seccion > p {
+            color: #775363;
+
+            margin-bottom: 45px;
+        }
+
+        .productos {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .producto {
+            width: 290px;
+
+            overflow: hidden;
+
+            background: white;
+
+            border-radius: 25px;
+
+            border: 1px solid #f0d8e4;
+
+            box-shadow:
+                0 12px 35px rgba(111, 37, 67, 0.08);
+
+            transition: 0.35s;
+        }
+
+        .producto:hover {
+            transform: translateY(-10px);
+        }
+
+        .producto-imagen {
+            height: 220px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe1ed,
+                    #fff6fa
+                );
+
+            font-size: 75px;
+        }
+
+        .producto h3 {
+            padding: 22px 20px 8px;
+
+            color: #a52c65;
+
+            font-size: 22px;
+        }
+
+        .producto p {
+            padding: 0 20px 25px;
+
+            color: #775363;
+
+            line-height: 1.6;
+        }
+
+        /* =====================================
+           CONTACTO
+        ===================================== */
+
+        .contacto {
+            padding: 90px 7%;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f6,
+                    #ffe5ef
+                );
+        }
+
+        .contacto h1 {
+            color: #942653;
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .informacion {
+            max-width: 650px;
+
+            margin: 35px auto 0;
+
+            padding: 40px;
+
+            background: white;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 40px rgba(111, 37, 67, 0.1);
+        }
+
+        .contacto input,
+        .contacto textarea {
+            width: 100%;
+
+            padding: 15px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #eccbd9;
+
+            border-radius: 12px;
+
+            background: #fffafd;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .contacto input:focus,
+        .contacto textarea:focus {
+            border-color: #c43d78;
+
+            box-shadow:
+                0 0 0 3px #fbe1ec;
+        }
+
+        .contacto textarea {
+            height: 130px;
+
+            resize: none;
+        }
+
+        /* =====================================
+           PIE DE PÁGINA
+        ===================================== */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            background: #52243a;
+
+            color: #ffe8f1;
+
+            font-size: 14px;
+        }
+
+        /* =====================================
+           CELULAR
+        ===================================== */
+
+        @media (max-width: 750px) {
+
+            .encabezado {
+                height: auto;
+
+                padding: 18px 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .encabezado nav {
+                gap: 18px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: auto;
+
+                padding: 70px 25px;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 50px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 25px;
+            }
+
+            .hero-texto > p {
+                font-size: 16px;
+            }
+
+            .hero-decoracion {
+                width: 230px;
+                height: 230px;
+
+                font-size: 85px;
+            }
+
+            .hero-decoracion::before {
+                width: 190px;
+                height: 190px;
+            }
+
+            .bienvenida h2,
+            .seccion h1,
+            .contacto h1 {
+                font-size: 32px;
+            }
+
+            .tarjeta,
+            .producto {
+                width: 100%;
+                max-width: 330px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         ENCABEZADO
+    =============================== -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+            💄 Maquillaje Beauty
+        </div>
+
+        <nav>
+
+            <a href="{% url 'inicio' %}">
+                Inicio
+            </a>
+
+            <a href="{% url 'productos' %}">
+                Productos
+            </a>
+
+            <a href="{% url 'contacto' %}">
+                Contacto
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==============================
+         CONTENIDO DE LAS PÁGINAS
+    =============================== -->
+
+    <main>
+
+        {% block contenido %}
+        {% endblock %}
+
+    </main>
+
+
+    <!-- ==============================
+         PIE DE PÁGINA
+    =============================== -->
+
+    <footer>
+
+        <p>
+            ©️ 2026 Maquillaje Beauty
+            | Todos los derechos reservados 💗
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

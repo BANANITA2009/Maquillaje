@@ -1,0 +1,185 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}
+
+Contacto | Maquillaje Beauty
+
+{% endblock %}
+
+{% block contenido %}
+
+<section class="seccion">
+
+    <p class="mini-titulo">💕 ESTAMOS PARA TI 💕</p>
+
+    <h1>¡Hablemos de belleza!</h1>
+
+    <p>
+
+        Nos encanta saber de ti. Si tienes dudas,
+
+        comentarios o sugerencias, escríbenos.
+
+    </p>
+
+    <div class="contacto">
+
+        <div class="informacion">
+
+            <h2 style="color:#a52c65;font-size:30px;margin-bottom:20px;">
+
+                Información de contacto 💗
+
+            </h2>
+
+            <p style="margin-bottom:22px;">
+
+                📞 <strong>Teléfono</strong><br>
+
+                55 1234 5678
+
+            </p>
+
+            <p style="margin-bottom:22px;">
+
+                📧 <strong>Correo electrónico</strong><br>
+
+                info@maquillajebeauty.com
+
+            </p>
+
+            <p style="margin-bottom:30px;">
+
+                📍 <strong>Dirección</strong><br>
+
+                Ciudad de México
+
+            </p>
+
+            <h3 style="color:#a52c65;margin-bottom:15px;">
+
+                ¡Síguenos en nuestras redes! ✨
+
+            </h3>
+
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+
+                <a href="#" style="background:#fce2ed;color:#a52c65;padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:bold;">
+
+                    Facebook
+
+                </a>
+
+                <a href="#" style="background:#fce2ed;color:#a52c65;padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:bold;">
+
+                    Instagram
+
+                </a>
+
+                <a href="#" style="background:#fce2ed;color:#a52c65;padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:bold;">
+
+                    TikTok
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <form method="post">
+
+            {% csrf_token %}
+
+            <h2 style="color:#a52c65;font-size:28px;margin-bottom:25px;">
+
+                Envíanos un mensaje 💌
+
+            </h2>
+
+            <label for="nombre">Tu nombre</label>
+
+            <input
+
+                id="nombre"
+
+                name="nombre"
+
+                type="text"
+
+                placeholder="Escribe tu nombre"
+
+                required
+
+            >
+
+            <label for="correo">Correo electrónico</label>
+
+            <input
+
+                id="correo"
+
+                name="correo"
+
+                type="email"
+
+                placeholder="ejemplo@correo.com"
+
+                required
+
+            >
+
+            <label for="mensaje">Tu mensaje</label>
+
+            <textarea
+
+                id="mensaje"
+
+                name="mensaje"
+
+                placeholder="¿En qué podemos ayudarte?"
+
+                required
+
+            ></textarea>
+
+            <button
+
+                type="submit"
+
+                style="
+
+                    width:100%;
+
+                    padding:16px;
+
+                    border:0;
+
+                    border-radius:30px;
+
+                    background:linear-gradient(135deg,#a92c65,#d6538b);
+
+                    color:white;
+
+                    font-size:16px;
+
+                    font-weight:bold;
+
+                    cursor:pointer;
+
+                    box-shadow:0 8px 20px rgba(169,44,101,0.2);
+
+                "
+
+            >
+
+                Enviar mensaje 💗
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

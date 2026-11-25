@@ -1,0 +1,150 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}
+Inicio | Maquillaje Beauty
+{% endblock %}
+
+{% block contenido %}
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-texto">
+
+        <p class="mini-titulo">
+            ✨ TU BELLEZA, TU ESTILO ✨
+        </p>
+
+        <h1>
+            Maquillaje
+            <span>Beauty</span> 💄
+        </h1>
+
+        <h2>
+            Resalta tu belleza
+        </h2>
+
+        <p>
+            Descubre productos de maquillaje pensados
+            para ayudarte a crear looks increíbles,
+            expresar tu personalidad y sentirte
+            espectacular.
+        </p>
+
+        <a href="{% url 'productos' %}" class="boton">
+            Ver productos 💗
+        </a>
+
+    </div>
+
+
+    <div class="hero-decoracion">
+        💄
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BIENVENIDA
+========================= -->
+
+<section class="bienvenida">
+
+    <p class="mini-titulo">
+        💕 BIENVENIDA
+    </p>
+
+    <h2>
+        Todo para resaltar tu belleza
+    </h2>
+
+    <p>
+        En Maquillaje Beauty encontrarás productos
+        para diferentes estilos y ocasiones.
+        Queremos que encuentres aquello que te haga
+        sentir cómoda, segura y hermosa.
+    </p>
+
+
+    <div class="tarjetas">
+
+
+        <article class="tarjeta">
+
+            <h3>
+                💄 Calidad
+            </h3>
+
+            <p>
+                Productos seleccionados para que
+                puedas crear tus looks favoritos.
+            </p>
+
+        </article>
+
+
+        <article class="tarjeta">
+
+            <h3>
+                💗 Variedad
+            </h3>
+
+            <p>
+                Diferentes productos, colores y
+                estilos para que encuentres tus favoritos.
+            </p>
+
+        </article>
+
+
+        <article class="tarjeta">
+
+            <h3>
+                ✨ Estilo
+            </h3>
+
+            <p>
+                Exprésate, experimenta y crea
+                looks que representen tu personalidad.
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FRASE
+========================= -->
+
+<section class="seccion">
+
+    <p class="mini-titulo">
+        ✦ MAQUILLAJE BEAUTY ✦
+    </p>
+
+    <h1>
+        Tu belleza comienza aquí 💕
+    </h1>
+
+    <p>
+        Explora nuestros productos y encuentra
+        todo lo que necesitas para crear tu próximo look.
+    </p>
+
+    <br>
+
+    <a href="{% url 'productos' %}" class="boton">
+        Explorar productos
+    </a>
+
+</section>
+
+{% endblock %}
